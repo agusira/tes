@@ -54,9 +54,9 @@ jobs:
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
     - name: fill secret
       run: |
-        sed -i "s|<access_key>|${{secrets.AWS_ACCESS_KEY_ID}}"
-        sed -i "s|<secrets_access_key>|${{secrets.AWS_SECRET_ACCESS_KEY}}"
-        sed -i "s|<session_token>|${{secrets.AWS_SESSION_TOKEN}}"
+        sed -i "s|<access_key>|${{secrets.AWS_ACCESS_KEY_ID}}" .aws/taskdef.json
+        sed -i "s|<secrets_access_key>|${{secrets.AWS_SECRET_ACCESS_KEY}}" .aws/taskdef.json
+        sed -i "s|<session_token>|${{secrets.AWS_SESSION_TOKEN}}" .aws/taskdef.json
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
