@@ -1,0 +1,9 @@
+version: 0.0
+# https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-resources.html#reference-appspec-file-structure-resources-ecs
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        LoadBalancerInfo:
+          ContainerName: "techmart-container"
+          ContainerPort: 5000
