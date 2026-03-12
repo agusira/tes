@@ -72,6 +72,6 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: ${{ env.ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
-        codedeploy-appspec: appspec.yaml
+        codedeploy-appspec: appspec.yml
         codedeploy-application: techmart-codedeploy-app-eastjava-agus
         codedeploy-deployment-group: techmart-deploymentgroup-eastjava-agus
